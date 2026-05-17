@@ -31,7 +31,7 @@ const TaskBoard = ({ tasks, setTasks, loading }) => {
     setTasks(newTasks);
 
     try {
-      await axios.put(`http://localhost:5000/api/tasks/${draggableId}`, { status: destination.droppableId });
+      await axios.put(`/api/tasks/${draggableId}`, { status: destination.droppableId });
     } catch (err) {
       console.error('Failed to update task status', err);
       // rollback could be added here

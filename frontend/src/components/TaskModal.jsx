@@ -36,9 +36,9 @@ const TaskModal = ({ isOpen, onClose, task }) => {
     e.preventDefault();
     try {
       if (task) {
-        await axios.put(`http://localhost:5000/api/tasks/${task._id}`, formData);
+        await axios.put(`/api/tasks/${task._id}`, formData);
       } else {
-        await axios.post('http://localhost:5000/api/tasks', formData);
+        await axios.post('/api/tasks', formData);
       }
       onClose();
     } catch (err) {
@@ -48,7 +48,7 @@ const TaskModal = ({ isOpen, onClose, task }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${task._id}`);
+      await axios.delete(`/api/tasks/${task._id}`);
       onClose();
     } catch (err) {
       console.error(err);

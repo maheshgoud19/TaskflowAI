@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar';
 import TaskBoard from '../components/TaskBoard';
 import { AuthContext } from '../context/AuthContext';
 
-const socket = io('http://localhost:5000');
+const socket = io('');
 
 const Dashboard = () => {
   const [tasks, setTasks] = useState([]);
@@ -40,7 +40,7 @@ const Dashboard = () => {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/tasks');
+      const res = await axios.get('/api/tasks');
       setTasks(res.data.tasks);
     } catch (err) {
       console.error(err);
